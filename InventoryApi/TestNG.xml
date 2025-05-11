@@ -1,0 +1,11 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="Inventory API Test Suite">
+    <test name="Inventory API Tests">
+        <classes>
+            <class name="com.inventoryapi.apis.UserManagement.LoginTest"/>
+            <class name="com.inventoryapi.apis.ProductManagement.ProductApiTests"/>
+            <class name="com.inventoryapi.apis.StockManagement.StockApiTests"/>
+            <class name="com.inventoryapi.apis.Status.StatusApiTest"/>
+        </classes>
+    </test>
+</suite>
