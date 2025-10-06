@@ -9,7 +9,7 @@ on:
 jobs:
   build:
     name: Build and Test on Predator
-    runs-on: [self-hosted, Windows, Predator]
+    runs-on: [self-hosted, Windows, PREDATOR]
 
     steps:
       - name: Checkout repository
