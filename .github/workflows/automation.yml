@@ -5,14 +5,7 @@ jobs:
   open-paint:
     runs-on: [self-hosted, Windows, X64, PREDATOR]
     steps:
-      - name: Launch MS Paint and close after 5 seconds
-        run: |
-          # Start MS Paint and get its process object
-          $paint = Start-Process mspaint -PassThru
-
-          # Wait 5 seconds so you can see Paint
-          Start-Sleep -Seconds 5
-
-          # Close Paint
-          $paint.CloseMainWindow()
-        shell: powershell
+      - name: Launch MS Paint and close after 5 seconds (bypass execution policy)
+        shell: cmd
+        run: >
+          powershell -NoProfile -ExecutionPolicy Bypass -Command "Start-Process mspaint; Start-Sleep -Seconds 5; (Get-Process -Name mspaint -ErrorAction SilentlyContinue) | ForEach-Object { $_.CloseMainWindow() }"
