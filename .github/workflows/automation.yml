@@ -3,6 +3,6 @@ on: [push]
 
 jobs:
   test:
-    runs-on: [self-hosted, Windows, PREDATOR]
+    runs-on: [self-hosted, Windows, X64, PREDATOR]
     steps:
       - run: echo "Runner is working"
