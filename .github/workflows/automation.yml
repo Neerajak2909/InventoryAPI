@@ -1,8 +1,10 @@
-name: Test Runner
+name: Open MS Paint
 on: [push]
 
 jobs:
-  test:
+  open-paint:
     runs-on: [self-hosted, Windows, X64, PREDATOR]
     steps:
-      - run: echo "Runner is working"
+      - name: Launch MS Paint
+        run: start mspaint
+        shell: powershell
